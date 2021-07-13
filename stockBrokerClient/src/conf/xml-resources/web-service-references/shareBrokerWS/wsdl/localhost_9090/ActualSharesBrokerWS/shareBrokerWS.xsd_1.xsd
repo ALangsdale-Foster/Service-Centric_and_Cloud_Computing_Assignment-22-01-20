@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://shareBrokerWS/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://shareBrokerWS/">
+
+<xs:element name="Shares">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Share" type="tns:Share" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="buyShares" type="tns:buyShares"/>
+
+<xs:element name="buySharesResponse" type="tns:buySharesResponse"/>
+
+<xs:element name="getAvailableShares" type="tns:getAvailableShares"/>
+
+<xs:element name="getAvailableSharesResponse" type="tns:getAvailableSharesResponse"/>
+
+<xs:element name="searchHighestPrice" type="tns:searchHighestPrice"/>
+
+<xs:element name="searchHighestPriceResponse" type="tns:searchHighestPriceResponse"/>
+
+<xs:element name="searchShare" type="tns:searchShare"/>
+
+<xs:element name="searchShareResponse" type="tns:searchShareResponse"/>
+
+<xs:element name="sellShares" type="tns:sellShares"/>
+
+<xs:element name="sellSharesResponse" type="tns:sellSharesResponse"/>
+
+<xs:element name="unmarshalAll" type="tns:unmarshalAll"/>
+
+<xs:element name="unmarshalAllResponse" type="tns:unmarshalAllResponse"/>
+
+<xs:complexType name="buyShares">
+<xs:sequence>
+<xs:element name="quantity" type="xs:int"/>
+<xs:element name="shareSymbol" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buySharesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:Share" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Share">
+<xs:sequence>
+<xs:element name="sharePrice" type="tns:SharePrice" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="companyName" type="xs:string"/>
+<xs:element name="companySymbol" type="xs:string"/>
+<xs:element name="availableShareQuant" type="xs:integer"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SharePrice">
+<xs:sequence>
+<xs:element name="currencyValue" type="xs:float"/>
+<xs:element name="currencyName" type="xs:string"/>
+<xs:element name="lastUpdated" type="xs:date"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="searchShare">
+<xs:sequence>
+<xs:element name="searchValue" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="searchShareResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:Share" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="searchHighestPrice">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="searchHighestPriceResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:Share" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAvailableShares">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAvailableSharesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:Share" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="unmarshalAll">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="unmarshalAllResponse">
+<xs:sequence>
+<xs:element name="return" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Share" type="tns:Share" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sellShares">
+<xs:sequence>
+<xs:element name="userInput" type="xs:string" minOccurs="0"/>
+<xs:element name="quantAvailable" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sellSharesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:Share" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

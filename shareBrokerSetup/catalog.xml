@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/E:/Final%20Year/SCC/Coursework/ActualSharesBrokerWS/../currentSharesSchema.xsd" uri="xml-resources/jaxb/shareBinding/currentSharesSchema.xsd"/>
+</catalog>
